@@ -67,3 +67,22 @@ class Solution {
         return finalHead;
     }
 }
+
+
+
+
+
+Node current = head;
+while (current != null) {
+    Node index = current.next; // start comparing with the node after current
+    while (index != null) {
+        if (current.value > index.value) {
+            int temp = current.value;
+            current.value = index.value;
+            index.value = temp;
+        }
+        index = index.next; // move forward
+    }
+    current = current.next; // move outer loop forward
+}
+
